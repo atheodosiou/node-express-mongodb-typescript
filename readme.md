@@ -1,0 +1,1 @@
+## Node.js, Express and MongoDB with TypeScript - Starter Template
