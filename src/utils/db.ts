@@ -9,7 +9,7 @@ export async function connectToDB() {
     };
 
     await connect(
-        'mongodb+srv://opap:Mwly3bobkYw33jiF@kino-watcher-thfvq.mongodb.net/kinoResults?retryWrites=true&w=majority',
+        process.env.CONNECTION_STRING,
         options,
         (err) => {
             if(err) return console.error('Failed to connect in db!', err);
