@@ -1,7 +1,7 @@
 {
-  "name": "kino-statistics-api",
+  "name": "node-express-mongodb-typescript",
   "version": "0.0.1",
-  "description": "A backend API for OPAP KINO game statistics",
+  "description": "A Node.js, Express and MongoDB with TypeScript  Starter Template",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
@@ -18,7 +18,7 @@
     "api"
   ],
   "author": "Anastasios Theodosiou",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@types/mongoose": "^5.7.1",
     "express": "^4.17.1",
