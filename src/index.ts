@@ -7,8 +7,8 @@ const app = express();
 config();
 
 //Import controllers
-import * as controllerOne from './controllers/test-1.controller';
-import * as controllerTwo from './controllers/test-2.controller';
+import * as controllerOne from './core/controllers/test-1.controller';
+import * as controllerTwo from './core/controllers/test-2.controller';
 
 
     const baseUrl = '/api'

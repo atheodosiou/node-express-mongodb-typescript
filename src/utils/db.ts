@@ -9,10 +9,10 @@ export async function connectToDB() {
     };
 
     await connect(
-        process.env.CONNECTION_STRING,
+        <string>process.env.CONNECTION_STRING,
         options,
         (err) => {
-            if(err) return console.error('Failed to connect in db!', err);
+            if (err) return console.error('Failed to connect in db!', err);
             console.info('Connection to db was successfull!')
         })
 };
