@@ -1,30 +1,31 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { config } from 'dotenv';
 import { connectToDB } from './utils/db';
-//Initialize express
+import { config } from 'dotenv';
+import { mainRouter } from './core/routes/index.routes';
+import morgan from "morgan";
+import { accessLogger } from "./utils/morganLogger";
+import { cors } from "./utils/cors";
+
+// Initialize express
 const app = express();
-//Initialize dotenv
-config();
 
-//Import controllers
-import * as controllerOne from './core/controllers/test-1.controller';
-import * as controllerTwo from './core/controllers/test-2.controller';
+// Middlewares
+// app.use(cors(environment.corsOptions));
+app.use(express.json());
+app.use(morgan("combined", { stream: accessLogger }));
 
+//Handle cors erros
+app.use(cors)
 
-    const baseUrl = '/api'
+// Routes
+app.use("/api/v1", mainRouter);
 
-    //Connect to mongo db
-    connectToDB();
+// Error handling 404
+app.use("/", (req: Request, res: Response, next: NextFunction) => {
+    res.status(404).json({ error: `Not found ${req.baseUrl} not exists` });
+});
 
-    app.use(express.json());
-
-    //Route configuration
-    app.use(`${baseUrl}/hello`, controllerOne.sayHello);
-    app.use(`${baseUrl}/hello-again`, controllerTwo.sayHello2);
-
-    //Error handling 404
-    app.use('/', (req: Request, res: Response, next: NextFunction) => {
-        res.status(404).json({ error: `Not found. Try using ${baseUrl} instead...` });
-    })
-
-    app.listen(process.env.PORT, () => { console.log(`Server is running on port ${process.env.PORT}...`) });
+app.listen(process.env.PORT, async () => {
+    console.log(`Server is running on port ${process.env.PORT}...`);
+    await connectToDB();
+});
