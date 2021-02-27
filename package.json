@@ -1,23 +1,23 @@
 {
-  "name": "node-express-mongodb-typescript",
-  "version": "0.0.1",
+  "name": "typescript-node-restfull-api-starter-temlate",
+  "version": "0.1.0",
   "description": "A Node.js, Express and MongoDB with TypeScript  Starter Template",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "start:dev": "nodemon src/index.ts",
     "build": "tsc -p .",
-    "": "",
     "test": "test"
   },
   "keywords": [
-    "opap",
-    "kino",
-    "statistics",
+    "node",
+    "typescript",
+    "mongo",
+    "mongoose",
     "rest",
     "api"
   ],
-  "author": "Anastasios Theodosiou",
+  "author": "Anastasios Theodosiou <anastasios.theodosiou@gmail.com> (anastasios.theodosiou.me)",
   "license": "MIT",
   "dependencies": {
     "@types/mongoose": "^5.7.1",
