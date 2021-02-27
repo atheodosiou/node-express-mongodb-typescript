@@ -1,6 +1,10 @@
 # typescript-node-restfull-api-starter-temlate
 Node.js Restful API starter template with TypeScript, MongoDB, and Mongoose.
 
+[![Build Status](https://travis-ci.com/atheodosiou/node-express-mongodb-typescript.svg?branch=master)](https://travis-ci.com/atheodosiou/node-express-mongodb-typescript)
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/atheodosiou/node-express-mongodb-typescript?style=social)
+
 ## Requirements
 1. Node.js >= 10
 
